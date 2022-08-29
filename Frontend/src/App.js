@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import {BrowserRouter ,Routes,Route,Navigate} from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Navigation from './components/shared/Navigation/Navigation';
@@ -6,9 +7,14 @@ import Authenticate from './pages/authenticate/Authenticate';
 import Activate from './pages/activate/Activate';
 import Rooms from './pages/Rooms/Rooms';
 import {useSelector} from 'react-redux';
+import { useLoadingwithRefresh } from './hooks/useLoadingwithRefresh';
+import Loader from './components/shared/Loader/Loader';
 
 function App() {
+  const loading=false;
   return (
+    loading?(<Loader message="Loading...! Please Wait"/>):
+    (
     <BrowserRouter>
     <Navigation />
     <Routes>
@@ -35,7 +41,7 @@ function App() {
     </ProtectedRoute> }/>
 
     </Routes>
-    </BrowserRouter>
+    </BrowserRouter>)
   );
 }
 

@@ -6,9 +6,18 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setAvatar } from '../../../store/activateSlice';
 import { activate } from '../../../http';
 import { setAuth } from '../../../store/authSlice';
+import Loader from '../../../components/shared/Loader/Loader';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const StepAvatar = ({ onNext }) => {
+    const notify = () => {
+        toast.error('Please Upload Profile Pic!', {
+            position: toast.POSITION.TOP_RIGHT
+        });
+    };
+
     const dispatch = useDispatch();
     const { name, avatar } = useSelector((state) => state.activate);
     const [image, setImage] = useState('/images/monkey-avatar.png');
@@ -25,14 +34,17 @@ const StepAvatar = ({ onNext }) => {
         };
     }
     async function submit() {
+        if(!avatar){
+            notify();
+            return;
+        }
         if (!name || !avatar) return;
         setLoading(true);
         try {
             const { data } = await activate({ name, avatar });
             if (data.auth) {
-                if (!unMounted) {
+                    if(!unMounted)
                     dispatch(setAuth(data));
-                }
             }
         } catch (err) {
             console.log(err);
@@ -47,10 +59,11 @@ const StepAvatar = ({ onNext }) => {
         };
     }, []);
 
-
+    if (loading) return <Loader message="Activation in progress..." />;
     return (
         <>
             <Card title={`Okay, ${name}`} logo="monkey-emoji.png">
+            <ToastContainer autoClose={1000} hideProgressBar={true}></ToastContainer>
                 <p className={styles.subHeading}>How’s this photo?</p>
                 <div className={styles.avatarWrapper}>
                     <img

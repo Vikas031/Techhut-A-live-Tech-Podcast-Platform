@@ -1,0 +1,96 @@
+.modalMask{
+    position:fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background:rgba(0,0,0,0.8) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalBody{
+    width: 60%;
+    max-width: 500px;
+    background-color: #1d1d1d;
+    position: relative;
+}
+
+.modalHeader{
+    padding: 30px;
+    border-bottom: 2px solid #262626;
+}
+
+.roomTypes{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+
+.typeBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 15px;
+}
+.typeBox:hover{
+    border: 1px solid greenyellow;
+}
+
+.typeBox.active{
+    background-color: #6b6767;
+}
+
+.heading{
+    margin-bottom: 5px;
+}
+
+.subheading{
+    margin: 10px 0px;
+    font-size: 18px;
+    font-weight: bold;   
+}
+
+.modalFooter{
+    padding: 30px;
+    text-align: center;
+}
+.modalFooter h2{
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.modalFooter button{
+    background: #20bd5f;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    padding: 7px 10px;
+    border-radius: 20px;
+    margin: 0 auto;
+    transition: all .3s ease-in-out;
+}
+
+.modalBody button:hover{
+    background: #13762b;
+}
+
+.modalBody span{
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.closeButton{
+    position: absolute;
+    right: 3px;
+    top: 1px;
+    background: none;
+
+}
+

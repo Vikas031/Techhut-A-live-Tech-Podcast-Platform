@@ -3,7 +3,7 @@ const tokenService = require("../services/token-service");
 module.exports=async function(req,res,next){
     try{
         const {accesstoken}=req.cookies;
-        console.log(accesstoken);
+        
         if(!accesstoken){
             throw new Error();
         }

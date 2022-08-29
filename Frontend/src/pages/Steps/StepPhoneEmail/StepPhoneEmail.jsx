@@ -25,9 +25,6 @@ const StepPhoneEmail = ({gotoNext}) => {
           </div>
          
       </div>
-      
-    
-    <button onClick={gotoNext}> Next</button>
     </>
   )
 }

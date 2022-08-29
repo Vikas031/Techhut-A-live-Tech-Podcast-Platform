@@ -5,6 +5,10 @@ html {
   font-size: 16px;
 }
 
+*{
+  box-sizing: border-box;
+}
+
 body,
 h1,
 h2,
@@ -41,7 +45,6 @@ body{
   width: 1200px;
   max-width: 90%;
   margin: 0 auto;
-  border: 2px solid white;
 }
 
 .cardWrapper{
@@ -49,4 +52,11 @@ body{
   align-items: center;
   justify-content: center;
   margin-top: 10%;
+}
+
+button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
 }
