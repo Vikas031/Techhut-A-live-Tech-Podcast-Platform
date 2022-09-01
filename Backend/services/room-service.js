@@ -9,6 +9,11 @@ class RoomService{
             speakers:[ownerId]
         })
         return room;
+    }
+
+    async getAllRooms(types){
+        const rooms=await RoomModel.find({roomType:{$in:types}}).populate('speakers').populate('ownerId');
+        return rooms;
 
     }
 }

@@ -1,5 +1,5 @@
 const roomService = require("../services/room-service");
-
+const RoomDto =require('../dtos/room.dto')
 class RoomsController{
     async create(req,res){
         const {Topic,roomType}=req.body;
@@ -16,9 +16,13 @@ class RoomsController{
             }
         )
 
-        return res.json()
+        return res.json(new RoomDto(room));
+    }
 
-
+    async getRooms(req,res){
+        const rooms=await roomService.getAllRooms(['open']);
+        const allRooms=rooms.map(room=>new RoomDto(room));
+        return res.json(allRooms);
     }
 }
 

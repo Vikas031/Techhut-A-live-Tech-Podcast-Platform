@@ -10,6 +10,7 @@ router.post('/api/activate',authMiddleware,ActivateController.activate);
 router.get('/api/refresh',AuthController.refresh);
 router.post('/api/logout',authMiddleware,AuthController.logout)
 router.post('/api/rooms',authMiddleware,RoomsController.create);
+router.get('/api/rooms',authMiddleware,RoomsController.getRooms);
 
 
 module.exports=router;

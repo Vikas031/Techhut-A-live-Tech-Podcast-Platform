@@ -49,3 +49,11 @@
     font-weight: bold;
     margin-right: 5px;
 }
+
+.singleSpeaker .avatar img{
+    position: initial;
+}
+
+.singleSpeaker .names{
+    margin-top: 10px;
+}
