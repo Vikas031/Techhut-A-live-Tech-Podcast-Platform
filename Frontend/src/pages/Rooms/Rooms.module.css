@@ -1,21 +1,21 @@
-.roomsHeader{
-    margin: 20px 0px;
+.roomsHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.left{
-    display: flex;
-    align-items: center;
-    
+    margin: 20px 0;
 }
 
-.heading{
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.heading {
     font-size: 20px;
     font-weight: bold;
 }
 
-.searchBox{
+.searchBox {
     background: #262626;
     margin-left: 20px;
     display: flex;
@@ -25,49 +25,51 @@
     border-radius: 20px;
 }
 
-.searchInput{
+.searchInput {
     background: transparent;
     border: none;
     outline: none;
-    padding:10px;
-    color:white;
+    padding: 10px;
+    color: #fff;
     width: 100%;
 }
-.heading{
+
+.heading {
     position: relative;
 }
 
-.heading::after{
-    content:'';
-    position:absolute;
-    bottom:-10px;
-    left:0;
+.heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
     width: 60%;
     height: 4px;
-    background-color: #0077ff;
+    background: #0077ff;
 }
 
-.startRoombtn{
+.startRoomButton {
     display: flex;
     align-items: center;
     background: #20bd5f;
     padding: 5px 20px;
     border-radius: 20px;
-    transition:all .3s ease-in-out
+    color: #fff;
+    transition: all 0.3s ease-in-out;
 }
 
-.startRoombtn span{
+.startRoomButton span {
     font-size: 16px;
     margin-left: 10px;
 }
 
-.startRoombtn:hover{
-    background: #0f6632 ;
+.startRoomButton:hover {
+    background: #0f6632;
 }
 
-.roomList{
-    margin-top: 60px;
+.roomList {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 60px;
 }
