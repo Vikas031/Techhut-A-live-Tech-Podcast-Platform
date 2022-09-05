@@ -7,6 +7,9 @@ const cors =require('cors');
 const cookieParser=require('cookie-parser');
 const ACTIONS=require('./actions');
 const server=require('http').createServer(app);
+const path=require('path')
+
+app.use(express.static(path.resolve(__dirname, './build')));
 
 const io=require('socket.io')(server,{
     cors:{
@@ -14,7 +17,6 @@ const io=require('socket.io')(server,{
         methods:['GET','POST'],
     }
 });
-
 
 
 app.use(cookieParser());
@@ -25,6 +27,7 @@ app.use(cors({
 app.use('/storage',express.static('storage'));
 
 const PORT=process.env.PORT||5500;
+
 DbConnect();
 app.use(express.json({
     limit:'8mb'

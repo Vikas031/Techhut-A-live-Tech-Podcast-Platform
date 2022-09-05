@@ -3,7 +3,7 @@ const { default: mongoose } = require("mongoose");
 
 function DbConnect(){
         
-    const mongoDB = process.env.DB_URL;
+    const mongoDB =  process.env.DB_URL;
     mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 
     //Get the default connection
