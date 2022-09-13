@@ -14,11 +14,15 @@ Tech-Hut uses a number of open source projects :
 
 #
 ## Project Screen-shots
-<img src="screenshots\entry.png?raw=true" width="350" />
+<p float="left">
+  <img src="screenshots\entry.png?raw=true" width="350" />
 <img src="screenshots\otp.png?raw=true" width="350" />
 <img src="screenshots\name.png?raw=true" width="350" />
+</p>
+
+<p float="left">
 <img src="screenshots\image.png?raw=true" width="350" />
 <img src="screenshots\home.png?raw=true" width="350" />
 <img src="screenshots\room.png?raw=true" width="350" />
-
+</p>
 
